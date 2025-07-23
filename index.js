@@ -23,7 +23,9 @@ app.post("/webhook", async (req, res) => {
     },
   });
 });
-
+app.get("/", (req, res) => {
+  res.send("🟢 GPT 카카오톡 챗봇 서버가 정상 작동 중입니다.");
+});
 async function askGPT(question) {
   const response = await axios.post(
     "https://api.openai.com/v1/chat/completions",
